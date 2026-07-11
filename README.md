@@ -1,143 +1,50 @@
-# 🎫 Sistema de Gestión de Tickets - Soporte Técnico
+# 🎫 Sistema de Tickets - Soporte Técnico
 
-[![Node.js](https://img.shields.io/badge/Node.js-18-green)](https://nodejs.org/)
-[![MongoDB](https://img.shields.io/badge/MongoDB-6-green)](https://www.mongodb.com/)
-[![Docker](https://img.shields.io/badge/Docker-Ready-blue)](https://www.docker.com/)
-[![License](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+Proyecto pequeño de práctica para gestión de incidencias y tickets de soporte técnico.
 
-Sistema web para la gestión de incidencias y tickets de soporte técnico, desarrollado con arquitectura MVC y desplegado con Docker.
+## ¿Qué hace?
 
-## 📋 Descripción
+Aplicación web donde los empleados pueden reportar problemas técnicos y el equipo de TI los resuelve de forma organizada.
 
-Aplicación web completa para la gestión de tickets de soporte técnico en empresas. Permite a los empleados reportar incidencias y al equipo de TI darles seguimiento de manera organizada y eficiente.
+## Tecnologías
 
-### Características principales
+- **Backend:** Node.js + Express
+- **Base de datos:** MongoDB
+- **Frontend:** HTML, CSS, JavaScript
+- **Contenedores:** Docker
 
-- **Sistema de roles** (Empleado, Técnico, Administrador)
-- **CRUD completo** de tickets con prioridades y categorías
-- **Notificaciones en tiempo real** para asignaciones y cambios de estado
-- **Dashboard con estadísticas** y métricas de rendimiento
-- **SLA integrado** con seguimiento de tiempos de respuesta
-- **Búsqueda y filtros** avanzados
-- **Archivos adjuntos** (imágenes, documentos, logs)
-- **Exportación a PDF y Excel**
-- **Sistema de comentarios** por ticket
-- **Historial completo** de cambios
-- **Rate limiting** para protección contra abuso
-- **Validación de contraseñas** seguras
+## Cómo usarlo
 
-## 🛠️ Tecnologías utilizadas
-
-| Componente | Tecnología |
-|------------|------------|
-| Backend | Node.js + Express |
-| Base de datos | MongoDB + Mongoose |
-| Frontend | HTML5, CSS3, JavaScript vanilla |
-| Autenticación | JWT (JSON Web Tokens) |
-| Contenedores | Docker + Docker Compose |
-| Seguridad | bcrypt, rate-limiting, helmet |
-
-## 🚀 Instalación
-
-### Requisitos previos
-
-- [Docker](https://www.docker.com/) instalado y ejecutándose
-
-### Pasos
-
-1. Clonar el repositorio
 ```bash
+# Clonar
 git clone https://github.com/VictorPzz/ticket-system.git
 cd ticket-system
-```
 
-2. Iniciar los contenedores
-```bash
+# Ejecutar
 docker-compose up -d
-```
 
-3. Cargar datos de prueba (opcional)
-```bash
-docker-compose exec app npm run seed
-```
-
-4. Abrir en el navegador
-```
+# Abrir
 http://localhost:3000
 ```
 
-## 👥 Usuarios de prueba
+## Usuarios de prueba
 
 | Rol | Email | Contraseña |
 |-----|-------|------------|
-| Administrador | admin@example.com | admin123 |
+| Admin | admin@example.com | admin123 |
 | Técnico | tecnico@example.com | tecnico123 |
 | Empleado | usuario@example.com | usuario123 |
 
-## 📁 Estructura del proyecto
+## Funcionalidades
 
-```
-ticket-system/
-├── public/
-│   ├── css/style.css      # Estilos de la aplicación
-│   └── js/app.js          # Lógica del frontend
-├── views/
-│   └── index.html         # Página principal
-├── src/
-│   ├── config/
-│   │   └── database.js    # Conexión a MongoDB
-│   ├── controllers/
-│   │   ├── authController.js      # Autenticación y usuarios
-│   │   ├── ticketController.js    # Lógica de tickets
-│   │   ├── notificationController.js  # Notificaciones
-│   │   └── exportController.js    # Exportación PDF/Excel
-│   ├── middleware/
-│   │   ├── auth.js        # Autenticación JWT
-│   │   ├── rateLimiter.js # Protección contra abuso
-│   │   └── auditLog.js    # Registro de auditoría
-│   ├── models/
-│   │   ├── User.js        # Modelo de usuario
-│   │   ├── Ticket.js      # Modelo de ticket
-│   │   ├── Notification.js # Modelo de notificación
-│   │   └── AuditLog.js    # Modelo de auditoría
-│   ├── routes/
-│   │   ├── authRoutes.js  # Rutas de autenticación
-│   │   └── ticketRoutes.js # Rutas de tickets
-│   └── utils/
-│       ├── notifier.js    # Servicio de notificaciones
-│       └── seed.js        # Datos de prueba
-├── uploads/               # Archivos adjuntos
-├── Dockerfile
-├── docker-compose.yml
-└── package.json
-```
+- Crear y gestionar tickets
+- Sistema de roles (Empleado, Técnico, Admin)
+- Notificaciones
+- Dashboard con estadísticas
+- Búsqueda y filtros
+- Archivos adjuntos
+- Exportar a PDF/Excel
 
-## 🔧 Funcionalidades por rol
+---
 
-### Empleado
-- Crear tickets de soporte
-- Ver el estado de sus tickets
-- Agregar comentarios
-- Ver qué técnico está asignado
-
-### Técnico
-- Ver todos los tickets disponibles
-- Auto-asignarse tickets
-- Cambiar estado de tickets asignados
-- Subir archivos adjuntos
-- Recibir notificaciones
-
-### Administrador
-- Ver dashboard con estadísticas
-- Asignar tickets a técnicos
-- Gestionar usuarios y roles
-- Exportar reportes (PDF/Excel)
-- Ver métricas de SLA
-
-## 📝 Licencia
-
-Este proyecto está bajo la licencia MIT - ver el archivo [LICENSE](LICENSE) para más detalles.
-
-## 👨‍💻 Autor
-
-**VictorPzz** - [GitHub](https://github.com/VictorPzz)
+*Proyecto de práctica desarrollado para aprender desarrollo web fullstack.*
