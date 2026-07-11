@@ -1,0 +1,26 @@
+services:
+  app:
+    build: .
+    ports:
+      - "3000:3000"
+    environment:
+      - PORT=3000
+      - MONGODB_URI=mongodb://mongo:27017/ticket-system
+      - JWT_SECRET=ticket-system-secret-key-2024
+    depends_on:
+      - mongo
+    volumes:
+      - .:/app
+      - /app/node_modules
+      - uploads:/app/uploads
+
+  mongo:
+    image: mongo:6
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo-data:/data/db
+
+volumes:
+  mongo-data:
+  uploads:
