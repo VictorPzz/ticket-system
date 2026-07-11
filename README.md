@@ -56,23 +56,10 @@ cd ticket-system
 docker-compose up -d
 ```
 
-3. Cargar datos de prueba (opcional)
-```bash
-docker-compose exec app npm run seed
-```
-
-4. Abrir en el navegador
+3. Abrir en el navegador
 ```
 http://localhost:3000
 ```
-
-## 👥 Usuarios de prueba
-
-| Rol | Email | Contraseña |
-|-----|-------|------------|
-| Administrador | admin@example.com | admin123 |
-| Técnico | tecnico@example.com | tecnico123 |
-| Empleado | usuario@example.com | usuario123 |
 
 ## 🔧 Funcionalidades por rol
 
